@@ -14,9 +14,9 @@ This project is:
 
 Click the button below to launch the project in Replit with zero setup:
 
-[![Run on Replit](https://replit.com/badge/github/YOUR_USERNAME/ipad-assign-api)](https://replit.com/new/github/YOUR_USERNAME/ipad-assign-api)
+[![Run on Replit](https://replit.com/badge/github/justinreeves00/ipad-assign-api)](https://replit.com/new/github/justinreeves00/ipad-assign-api)
 
-> Replace `YOUR_USERNAME` with your actual GitHub username before publishing.
+> Replace `justinreeves00` with your actual GitHub username before publishing.
 
 ---
 
