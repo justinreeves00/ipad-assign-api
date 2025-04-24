@@ -4,9 +4,19 @@ A lightweight, self-hosted Python/Flask app that lets school districts assign sh
 
 This project is:
 - ✅ **Customizable** via simple config files
-- 🔐 **Secure** with Microsoft Graph API credentials stored in a local `.env` file
-- 🚀 **Deployable** on Replit, Render, or anywhere Flask apps run
+- 🔐 **Secure** with Microsoft Graph API credentials stored in a local `.env` file or Replit Secrets
+- 🚀 **Deployable** instantly via Replit with no installs
 - 👩‍🏫 **Teacher-friendly**, with a web form frontend
+
+---
+
+## 🚀 One-Click Deployment on Replit
+
+Click the button below to launch the project in Replit with zero setup:
+
+[![Run on Replit](https://replit.com/badge/github/YOUR_USERNAME/ipad-assign-api)](https://replit.com/new/github/YOUR_USERNAME/ipad-assign-api)
+
+> Replace `YOUR_USERNAME` with your actual GitHub username before publishing.
 
 ---
 
@@ -18,6 +28,8 @@ ipad-assign-api/
 ├── config.json             # Custom dropdown settings (editable)
 ├── .env.example            # Example environment variable template
 ├── requirements.txt        # Python dependencies
+├── .replit                 # Replit run command
+├── replit.nix              # Replit environment setup
 ├── templates/
 │   └── assign.html         # Web form UI
 ├── static/
@@ -26,48 +38,27 @@ ipad-assign-api/
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠️ Setup Instructions (for Replit users)
 
-### 1. Clone this repo
+### 1. Click the Replit button above or import the repo manually
 
-```bash
-git clone https://github.com/YOUR_USERNAME/ipad-assign-api.git
-cd ipad-assign-api
+- Replit will clone the repo
+- Install the required packages
+- Launch your Flask app automatically
+
+### 2. Add your Microsoft Graph API credentials in Replit
+
+Go to the **Secrets** tab in the left sidebar and add:
+
+```
+CLIENT_ID       = your-client-id
+CLIENT_SECRET   = your-client-secret
+TENANT_ID       = your-tenant-id
 ```
 
----
+### 3. Customize `config.json`
 
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-If you're using Replit or Render, this is handled automatically.
-
----
-
-### 3. Configure your environment variables
-
-Copy `.env.example` to `.env` and add your **Microsoft Graph API credentials**:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env`:
-
-```env
-CLIENT_ID=your-client-id
-CLIENT_SECRET=your-client-secret
-TENANT_ID=your-tenant-id
-```
-
----
-
-### 4. Customize `config.json`
-
-Define dropdown options for your school:
+Edit `config.json` directly in Replit to customize buildings, grades, and classrooms:
 
 ```json
 {
@@ -78,16 +69,6 @@ Define dropdown options for your school:
   "defaultStationPrefix": "S"
 }
 ```
-
----
-
-### 5. Run the app
-
-```bash
-python app.py
-```
-
-Visit [http://localhost:5000](http://localhost:5000) to view the assignment form.
 
 ---
 
@@ -115,29 +96,6 @@ Visit [http://localhost:5000](http://localhost:5000) to view the assignment form
   "deviceName": "North Campus-3th-204-S05"
 }
 ```
-
----
-
-## 🌐 Deploy Anywhere
-
-### ✅ [Replit](https://replit.com/)
-1. Import the GitHub repo
-2. Set `.env` secrets via the **Secrets** tab
-3. Click **Run**
-
-### ✅ [Render](https://render.com/)
-1. New Web Service → Connect your GitHub repo
-2. Environment: Python 3
-3. Start command: `python app.py`
-4. Set your environment variables under **Environment Settings**
-
----
-
-## 🔐 Microsoft Graph Integration (coming soon)
-This project is ready to connect with Microsoft Graph to:
-- Rename iPads via their serial number
-- Assign group tags or device categories
-- Automate MDM setup flows
 
 ---
 
